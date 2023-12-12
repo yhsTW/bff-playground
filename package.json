@@ -1,0 +1,8 @@
+{
+  "name": "bff-playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/yhsTW/bff-playground.git",
+  "author": "YHS-mac <yhs0823@twinny.co.kr>",
+  "license": "MIT"
+}
