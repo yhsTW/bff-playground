@@ -7,7 +7,7 @@ const server = new ApolloServer({ typeDefs: schema, resolvers });
 const app = express();
 
 server.start().then(() => {
-    server.applyMiddleware({ app, path: '/graphql' });
+  server.applyMiddleware({ app, path: '/graphql' });
 });
 
 module.exports = app;

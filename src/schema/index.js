@@ -1,7 +1,7 @@
 const robotSchema = require('./robot');
 
 const schema = `#graphql
-    ${robotSchema}
+  ${robotSchema}
 `;
 
 module.exports = schema;
