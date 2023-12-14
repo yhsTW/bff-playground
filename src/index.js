@@ -1,12 +1,10 @@
-const express = require('express');
+require('dotenv').config();
+const app = require('./app');
 
 const PORT = 3000;
-const app = express();
 
-app.get('/', (_, res) => {
-    res.status(200).send('Hello world!');
-});
-
-app.listen(PORT, () => {
+const handleListening = () => {
     console.log(`bff-playground listening on port ${PORT}`);
-});
+};
+
+app.listen(PORT, handleListening);
