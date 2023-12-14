@@ -1,11 +1,23 @@
 const robotSchema = `#graphql
     type Robot {
-        key: String
+        key: ID
         name: String
+        missionId: String
+        isAssignable: Boolean
+        lastConnectedTime: String
+    }
+
+    input WorkspaceFilter {
+        id: ID
+    }
+
+    input RobotFilter {
+        key: ID
+        workspace: WorkspaceFilter
     }
 
     type Query {
-        robot(key: ID): Robot
+        robot(filter: RobotFilter): Robot
     }
 `;
 
