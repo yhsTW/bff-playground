@@ -1,15 +1,18 @@
 {
-  "name": "bff-playground",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/yhsTW/bff-playground.git",
-  "author": "YHS-mac <yhs0823@twinny.co.kr>",
-  "license": "MIT",
-  "dependencies": {
-    "apollo-server-express": "^3.13.0",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "graphql": "^16.8.1",
-    "node-fetch": "2"
-  }
+    "name": "bff-playground",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/yhsTW/bff-playground.git",
+    "author": "YHS-mac <yhs0823@twinny.co.kr>",
+    "license": "MIT",
+    "scripts": {
+        "start": "node src/index.js"
+    },
+    "dependencies": {
+        "apollo-server-express": "^3.13.0",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "graphql": "^16.8.1",
+        "node-fetch": "2"
+    }
 }
