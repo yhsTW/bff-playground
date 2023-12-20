@@ -1,8 +1,23 @@
-const { getRobot } = require('../services/robot');
+const { RobotController } = require('../controllers');
 
 const robotResolvers = {
   Query: {
-    robot: (_, args) => getRobot(args),
+    robot: (
+      _,
+      {
+        filter: {
+          robot: { key },
+          workspace: { id },
+        },
+      },
+    ) => RobotController.getRobot(key, id),
+  },
+  Subscription: {
+    go: {
+      subscribe: (_, { input: { robotKey, stationIds } }) => {
+        return RobotController.go({ robotKey, stationIds });
+      },
+    },
   },
 };
 

@@ -1,5 +1,8 @@
 require('dotenv').config();
-const app = require('./app');
+const { httpServer, server, app } = require('./app');
+const cors = require('cors');
+const { expressMiddleware } = require('@apollo/server/express4');
+const express = require('express');
 
 const PORT = 3000;
 
@@ -7,4 +10,7 @@ const handleListening = () => {
   console.log(`bff-playground listening on port ${PORT}`);
 };
 
-app.listen(PORT, handleListening);
+server.start().then(() => {
+  app.use('/graphql', cors(), express.json(), expressMiddleware(server));
+  httpServer.listen(PORT, handleListening);
+});

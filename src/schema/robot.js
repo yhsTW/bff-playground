@@ -7,17 +7,34 @@ const robotSchema = `#graphql
     lastConnectedTime: String
   }
 
+  input RobotFilter {
+    key: ID
+  }
+
   input WorkspaceFilter {
     id: ID
   }
 
-  input RobotFilter {
-    key: ID
+  input RobotQueryFilter {
+    robot: RobotFilter
     workspace: WorkspaceFilter
   }
 
+  input StationFilter {
+    id: ID
+  }
+
+  input RobotGoInput {
+    robotKey: ID!
+    stationIds: [ID]!
+  }
+
   type Query {
-    robot(filter: RobotFilter): Robot
+    robot(filter: RobotQueryFilter): Robot
+  }
+
+  type Subscription {
+    go(input: RobotGoInput): Robot
   }
 `;
 
